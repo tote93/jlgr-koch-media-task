@@ -1,5 +1,5 @@
 import { __dirname } from "./config.js";
-const fileURL = __dirname + "/db/userMode.json";
+const fileURL = __dirname + "/db/userModel.json";
 import fs from "fs";
 
 export const buildResponseMessage = (statusCode, message, data) => {
@@ -18,7 +18,7 @@ export const readJsonFile = (res) => {
   } catch (error) {
     res
       .status(500)
-      .send(buildResponseMessage(500, `ERROR ${action} the user!`, null));
+      .send(buildResponseMessage(500, `ERROR Reading the user list!`, null));
   }
 };
 

@@ -9,14 +9,16 @@ import { buildResponseMessage } from "../functions.js";
 
 // Config
 const api = express.Router();
-
+api.get("/test", (req, res) => {
+  res.status(200).send({ message: "Hello World!" });
+});
 api.get("/getUserList", getUserList);
 
 api.post("/createUser", createUser);
 
 api.put("/updateUser", updateUser);
 
-api.delete("/deleteUser", deleteUser);
+api.post("/deleteUser", deleteUser);
 
 api.get("*", (req, res) => {
   res
@@ -29,4 +31,5 @@ api.post("*", (req, res) => {
     .status(404)
     .send(buildResponseMessage(404, `ERROR non existing route!`, null));
 });
+
 export default api;

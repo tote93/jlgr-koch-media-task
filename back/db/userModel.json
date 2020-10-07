@@ -1,0 +1,32 @@
+[
+  {
+    "id": 0,
+    "name": "Marge Simpson",
+    "email": "Marge@gmail.com",
+    "phone": "111111111"
+  },
+  {
+    "id": 1,
+    "name": "Lisa Simpson",
+    "email": "Lisa@gmail.com",
+    "phone": "222222222"
+  },
+  {
+    "id": 2,
+    "name": "Bart Simpson",
+    "phone": "333333333",
+    "email": "Bort@gmail.com"
+  },
+  {
+    "id": 3,
+    "name": "Homer Simpson",
+    "phone": "444444444",
+    "email": "Homer@gmail.com"
+  },
+  {
+    "id": 4,
+    "name": "Maggie Simpson",
+    "phone": "55555555",
+    "email": "Maggie@gmail.com"
+  }
+]
