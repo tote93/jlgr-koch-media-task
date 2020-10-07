@@ -9,9 +9,7 @@ import { buildResponseMessage } from "../functions.js";
 
 // Config
 const api = express.Router();
-api.get("/testing", (req, res) => {
-  res.status(200).send({ message: "Hello World!" });
-});
+
 api.get("/getUserList", getUserList);
 
 api.post("/createUser", createUser);
