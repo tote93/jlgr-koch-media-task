@@ -1,0 +1,4 @@
+/front/node_modules
+.DS_Store
+
+front/.vscode/
