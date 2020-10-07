@@ -1,0 +1,27 @@
+.userInfo {
+  display: flex;
+  align-items: center;
+  flex-flow: column wrap;
+  justify-content: center;
+  margin: 20px;
+}
+.userInfo__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.userInfo__title > h2 {
+  font-size: 2em;
+  font-weight: 600;
+}
+.userInfo__details {
+  border: 1px solid black;
+  padding: 1em;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0004, #0004);
+}
+.userInfo__details > p {
+  line-height: 2em;
+  color: #8a8787;
+  word-spacing: 0.1em;
+}

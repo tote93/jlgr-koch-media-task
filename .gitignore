@@ -1,0 +1,10 @@
+/front/node_modules
+.DS_Store
+
+front/.vscode/
+
+front/.firebaserc
+
+front/package-lock.json
+
+front/build/
