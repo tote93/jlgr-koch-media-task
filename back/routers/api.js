@@ -10,6 +10,14 @@ import { buildResponseMessage } from "../functions.js";
 // Config
 const api = express.Router();
 
+api.get("/getUserList", getUserList);
+
+api.post("/createUser", createUser);
+
+api.put("/updateUser", updateUser);
+
+api.delete("/deleteUser", deleteUser);
+
 api.get("*", (req, res) => {
   res
     .status(404)
@@ -21,13 +29,4 @@ api.post("*", (req, res) => {
     .status(404)
     .send(buildResponseMessage(404, `ERROR non existing route!`, null));
 });
-
-api.get("/getUserList", getUserList);
-
-api.post("/createUser", createUser);
-
-api.put("/updateUser", updateUser);
-
-api.delete("/deleteUser", deleteUser);
-
 export default api;
