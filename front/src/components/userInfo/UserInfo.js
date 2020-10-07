@@ -4,6 +4,7 @@ import { selectUser, setUser } from "../../features/user/userSlice";
 import "./UserInfo.css";
 import CloseIcon from "@material-ui/icons/Close";
 import { IconButton } from "@material-ui/core";
+
 function UserInfo() {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();

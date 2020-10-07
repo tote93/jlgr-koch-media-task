@@ -8,7 +8,7 @@ function Table() {
   const userList = useSelector(selectUserList);
 
   return (
-    <table className="dcf-table dcf-table-responsive dcf-table-bordered dcf-table-striped dcf-w-100%">
+    <table className="tableComponent-table tableComponent-table-responsive tableComponent-table-bordered  tableComponent-w-100%">
       <thead>
         <tr>
           <th scope="col" data-label="name">
@@ -24,8 +24,8 @@ function Table() {
         </tr>
       </thead>
       <tbody>
-        {userList?.map((user, i) => (
-          <TableRow key={user.email} id={i} user={user} />
+        {userList?.map((user) => (
+          <TableRow key={user.id} user={user} />
         ))}
       </tbody>
     </table>

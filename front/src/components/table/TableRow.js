@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import ButtonCell from "../buttonCell/ButtonCell";
-import { setEditable } from "../../features/actions/actionsSlice";
 import { editUserOnList } from "../../features/userList/userListSlice";
-import { validateForm, isNumberPhone } from "../../functions";
+import {
+  validateForm,
+  isNumberPhone,
+  controlSelectedRow,
+} from "../../functions";
 import { TextField } from "@material-ui/core";
+import generateMessage from "../generateMessage";
+import axios from "../../axios";
 
-function TableRow({ user, id }) {
+function TableRow({ user }) {
   const [isEditable, setIsEditable] = useState(false);
   const [name, setName] = useState(user.name);
   const [email, setEmail] = useState(user.email);
@@ -14,21 +19,22 @@ function TableRow({ user, id }) {
   const [errors, setErrors] = useState({});
   const dispatch = useDispatch();
 
-  const handleClickBackground = (e) => {
-    //e.target.parentElement.style.background = "#738CE9";
-  };
   const editUser = () => {
     setIsEditable(!isEditable);
   };
 
-  const saveUser = () => {
+  const saveUser = async () => {
     const json = {
-      user: { name: name, phone: phone, email: email },
-      id: id,
+      id: user.id,
+      name: name,
+      phone: phone,
+      email: email,
     };
     const error = validateForm(json);
     if (Object.keys(error).length === 0) {
-      dispatch(editUserOnList(json, user));
+      const response = await axios.put("/updateUser", json);
+      generateMessage(response);
+      dispatch(editUserOnList(user.id));
       setErrors({});
       setIsEditable(!isEditable);
     } else {
@@ -40,9 +46,14 @@ function TableRow({ user, id }) {
     const input = e.target.value;
     isNumberPhone(input) ? setPhone(input) : setPhone(phone);
   };
+  const handleClickSelect = (e) => {
+    const tagName = e.target.tagName;
+    const allowedTags = ["TD", "TH", "INPUT"];
+    if (allowedTags.includes(tagName)) controlSelectedRow(user.id);
+  };
 
   return (
-    <tr key={user.email} onClick={handleClickBackground}>
+    <tr id={user.id} onClick={handleClickSelect} className="row">
       <th scope="row" data-label="name">
         <TextField
           margin="dense"
@@ -55,19 +66,19 @@ function TableRow({ user, id }) {
           disabled={isEditable ? false : true}
         />
       </th>
-      <td data-label="email">
+      <td data-label="email" onClick={handleClickSelect}>
         <TextField
           margin="dense"
           type="text"
           fullWidth
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value.replace(/\s/g, "_"))}
           value={email}
           error={Boolean(errors.email)}
           helperText={errors.email}
           disabled={isEditable ? false : true}
         />
       </td>
-      <td data-label="phone">
+      <td data-label="phone" onClick={handleClickSelect}>
         <TextField
           margin="dense"
           type="text"

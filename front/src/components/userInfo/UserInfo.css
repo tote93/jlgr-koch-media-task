@@ -18,8 +18,7 @@
 .userInfo__details {
   border: 1px solid black;
   padding: 1em;
-  -webkit-box-reflect: below 2px
-    linear-gradient(transparent, transparent, #0004);
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0004, #0004);
 }
 .userInfo__details > p {
   line-height: 2em;

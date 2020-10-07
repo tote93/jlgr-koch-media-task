@@ -1,68 +1,117 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-## Available Scripts
+<br />
+<p align="center">
+  <h3 align="center">Purple Team Task Readme</h3>
+  <p align="center">
+    You work as a JavaScript Developer in a Koch Media that heavily works with Enterprise systems. You’ve got a task to create for providing fully functional effects and user interaction on an html table shown below.
+    <br />
+    <br />
+    <a href="https://koch-media-jlgr.web.app">View Demo</a>
+</p>
 
-In the project directory, you can run:
+<!-- TABLE OF CONTENTS -->
 
-### `yarn start`
+## Table of Contents
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [About the Project](#about-the-project)
+  - [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [License](#license)
+- [Contact](#contact)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+<!-- ABOUT THE PROJECT -->
 
-### `yarn test`
+## About The Project
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Front-end
 
-### `yarn build`
+- [x] You should create HML/CSS for the given HTML table.
+- [x] You should create a form to enter data into the table by pressing the submit button.
+- [x] When clicking at ‘read’ button, you should get all data from the given row and show them as ‘details’ bellow the table
+- [x] When clicking on Delete button, the current user should be deleted
+- [x] When clicking on Update button, the current row should become editable, and the update button should turn into a save button, upon entering new data, pressing the save button should save the updated user data.
+- [x] BONUS 1: When clicking on any of the rows (not the buttons) color the clicked row with a blue background.
+- [x] BONUS 2: Add a CLOSE button in details view, so that when it’s clicked, details view will get closed.
+- [x] BONUS 4: Validate that the email entered in the form is truly an email address. Validate that the telephone number is composed only from numbers
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Back-end
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- [x] Create Nodejs server witch will connect to the client application from the Task1. The service should have the basic functionalities like create, read, update and delete users. The users Data should be store into local memory you don’t need to create any DB connections (keep it simple).
+- [x] You should create Node service for the client application from Task1.
+- [x] Service should have following endpoints
+  - create a new user send JSON payload with user data (Name, Email, Phone)
+  - fetch existing user list return list of saved users
+  - update existing user send JSON payload with updated user data (Name, Email, Phone)
+  - delete existing user
+- [x] BONUS 1: Create a custom response body where you will send to client status code, data and user friendly message.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [x] BONUS 2: Create a 404 Not found endpoint witch will return an error when user try to request not existing route.
 
-### `yarn eject`
+### Built With
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [React JS](https://es.reactjs.org/)
+- [Material UI](https://material-ui.com/)
+- [CSS BEM](http://getbem.com/introduction/)
+- [Axios](https://github.com/axios/axios)
+- [Node JS](https://nodejs.org/)
+- [Express JS](https://expressjs.com/)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<!-- GETTING STARTED -->
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Getting Started
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+This is an example of how you may give instructions on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
 
-## Learn More
+### Prerequisites
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This is an example of how to list things you need to use the software and how to install them.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- npm
 
-### Code Splitting
+```sh
+npm install npm@latest -g
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### Installation
 
-### Analyzing the Bundle Size
+1. Clone the repo
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+```sh
+git clone https://github.com/tote93/Purple-Task
+```
 
-### Making a Progressive Web App
+3. Install NPM packages
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+```sh
+npm install
+```
 
-### Advanced Configuration
+4. Execute
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+```JS
+npm run start
+```
 
-### Deployment
+<!-- LICENSE -->
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## License
 
-### `yarn build` fails to minify
+Distributed under the MIT License. See `LICENSE` for more information.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+<!-- CONTACT -->
+
+## Contact
+
+Jose Luis Gordillo Relaño - [igorej](https://www.linkedin.com/in/i62gorej/) -igorej@hotmail.com
+
+Project Link: [https://github.com/tote93/jlgr-koch-media-task]
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/i62gorej/

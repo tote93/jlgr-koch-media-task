@@ -9,16 +9,23 @@ import {
   DialogTitle,
 } from "@material-ui/core";
 import { isNumberPhone, validateForm } from "../../functions";
-import { useDispatch } from "react-redux";
-import { addToList } from "../../features/userList/userListSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addToList,
+  selectUserList,
+} from "../../features/userList/userListSlice";
+import axios from "../../axios";
 
+import generateMessage from "../generateMessage";
 function AddUserForm() {
   const [open, setOpen] = React.useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [errors, setErrors] = useState({});
+  const userList = useSelector(selectUserList);
   const dispatch = useDispatch();
+
   const handleClose = () => {
     setOpen(false);
     setEmail("");
@@ -27,14 +34,19 @@ function AddUserForm() {
     setErrors({});
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const json = {
-      user: { name: name, phone: phone, email: email },
+      id: userList.length,
+      name: name,
+      phone: phone,
+      email: email,
     };
     const error = validateForm(json);
     if (Object.keys(error).length === 0) {
-      dispatch(addToList(json.user));
+      const response = await axios.post("/createUser", json);
+      generateMessage(response);
+      dispatch(addToList(json));
       handleClose();
     } else {
       setErrors(error);
@@ -46,7 +58,7 @@ function AddUserForm() {
   };
 
   return (
-    <div>
+    <>
       <Button variant="outlined" color="primary" onClick={() => setOpen(true)}>
         Add New User
       </Button>
@@ -63,7 +75,6 @@ function AddUserForm() {
           <form autoComplete="off">
             <TextField
               autoFocus
-              id="name"
               label="Name"
               margin="dense"
               type="text"
@@ -75,18 +86,16 @@ function AddUserForm() {
             />
             <TextField
               margin="dense"
-              id="email"
               label="Email Address"
               type="email"
               fullWidth
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value.replace(/\s/g, "_"))}
               error={Boolean(errors.email)}
               helperText={errors.email}
             />
             <TextField
               margin="dense"
-              id="phone"
               label="Phone Number"
               type="text"
               fullWidth
@@ -96,7 +105,7 @@ function AddUserForm() {
               helperText={errors.phone}
             />
             <DialogActions>
-              <Button onClick={handleClose} color="primary">
+              <Button onClick={handleClose} color="secondary">
                 Cancel
               </Button>
               <Button type="submit" onClick={handleSubmit} color="primary">
@@ -106,8 +115,7 @@ function AddUserForm() {
           </form>
         </DialogContent>
       </Dialog>
-    </div>
+    </>
   );
 }
-
 export default AddUserForm;

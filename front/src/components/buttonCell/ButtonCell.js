@@ -1,15 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "@material-ui/core/Button";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import "./ButtonCell.css";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../features/user/userSlice";
 import { deleteUserFromList } from "../../features/userList/userListSlice";
+import axios from "../../axios";
 
+import generateMessage from "../generateMessage";
 function ButtonCell({ user, onEditUser, isEditable, onSaveUser }) {
   const dispatch = useDispatch();
-  const deleteUser = () => {
-    // Async llamada
+  const deleteUser = async () => {
+    const response = await axios.post("/deleteUser", {
+      id: user.id,
+    });
+    generateMessage(response);
     dispatch(deleteUserFromList(user));
   };
 
