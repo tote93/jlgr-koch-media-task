@@ -8,7 +8,7 @@ function Table() {
   const userList = useSelector(selectUserList);
 
   return (
-    <table className="tableComponent-table tableComponent-table-responsive tableComponent-table-bordered  tableComponent-w-100%">
+    <table className="tableComponent__table tableComponent__table__bordered">
       <thead>
         <tr>
           <th scope="col" data-label="name">

@@ -11,7 +11,7 @@ import generateMessage from "../generateMessage";
 function ButtonCell({ user, onEditUser, isEditable, onSaveUser }) {
   const dispatch = useDispatch();
   const deleteUser = async () => {
-    const response = await axios.post("/deleteUser", {
+    const response = await axios.put("/deleteUser", {
       id: user.id,
     });
     generateMessage(response);

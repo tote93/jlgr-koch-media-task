@@ -23,68 +23,69 @@ td {
   text-align: right !important;
 }
 
-.tableComponent-table caption {
+.tableComponent__table caption {
   color: var(--caption);
   font-size: 1.13em;
   font-weight: 700;
   padding-bottom: 0.56rem;
 }
 
-.tableComponent-table thead {
+.tableComponent__table thead {
   font-size: 0.84em;
 }
 
-.tableComponent-table tbody {
+.tableComponent__table tbody {
   border-bottom: 1px solid var(--b-table);
   border-top: 1px solid var(--b-table);
   font-size: 0.84em;
 }
 
-.tableComponent-table tfoot {
+.tableComponent__table tfoot {
   font-size: 0.84em;
 }
 
-.tableComponent-table td,
-.tableComponent-table th {
-  padding-right: 1.78em;
+.tableComponent__table td,
+.tableComponent__table th {
+  padding-right: 1.28em;
+  padding-left: 1.28em;
 }
 
-.tableComponent-table-bordered,
-.tableComponent-table-bordered td,
-.tableComponent-table-bordered th {
+.tableComponent__tableBordered,
+.tableComponent__tableBordered td,
+.tableComponent__tableBordered th {
   border: 1px solid var(--b-table);
 }
 
-.tableComponent-table-bordered td,
-.tableComponent-table-bordered th {
+.tableComponent__tableBordered td,
+.tableComponent__tableBordered th {
   padding-left: 1em;
   padding-right: 1em;
 }
 
-.tableComponent-table-bordered tr:not(:last-child) {
+.tableComponent__tableBordered tr:not(:last-child) {
   border-bottom: 1px solid var(--b-table);
 }
 
-.tableComponent-table thead td,
-.tableComponent-table thead th {
+.tableComponent__table thead td,
+.tableComponent__table thead th {
   padding-bottom: 0.75em;
   vertical-align: bottom;
 }
 
-.tableComponent-table tbody td,
-.tableComponent-table tbody th,
-.tableComponent-table tfoot td,
-.tableComponent-table tfoot th {
+.tableComponent__table tbody td,
+.tableComponent__table tbody th,
+.tableComponent__table tfoot td,
+.tableComponent__table tfoot th {
   padding-top: 0.75em;
   vertical-align: top;
 }
 
-.tableComponent-table tbody td,
-.tableComponent-table tbody th {
+.tableComponent__table tbody td,
+.tableComponent__table tbody th {
   padding-bottom: 0.75em;
 }
 
-.tableComponent-table-bordered thead th {
+.tableComponent__tableBordered thead th {
   padding-top: 1.33em;
 }
 
@@ -112,9 +113,7 @@ input:enabled {
     rgba(219, 228, 227, 1) 92%
   );
 }
-.selectedRow {
-  background: #8fa4f2;
-}
+
 div > div > input,
 .row:hover {
   cursor: pointer;

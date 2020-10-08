@@ -26,39 +26,24 @@
 
 ## About The Project
 
-### Front-end
-
-- [x] You should create HML/CSS for the given HTML table.
-- [x] You should create a form to enter data into the table by pressing the submit button.
-- [x] When clicking at ‘read’ button, you should get all data from the given row and show them as ‘details’ bellow the table
-- [x] When clicking on Delete button, the current user should be deleted
-- [x] When clicking on Update button, the current row should become editable, and the update button should turn into a save button, upon entering new data, pressing the save button should save the updated user data.
-- [x] BONUS 1: When clicking on any of the rows (not the buttons) color the clicked row with a blue background.
-- [x] BONUS 2: Add a CLOSE button in details view, so that when it’s clicked, details view will get closed.
-- [x] BONUS 4: Validate that the email entered in the form is truly an email address. Validate that the telephone number is composed only from numbers
-
 ### Back-end
 
 - [x] Create Nodejs server witch will connect to the client application from the Task1. The service should have the basic functionalities like create, read, update and delete users. The users Data should be store into local memory you don’t need to create any DB connections (keep it simple).
 - [x] You should create Node service for the client application from Task1.
 - [x] Service should have following endpoints
-  - [x] create a new user send JSON payload with user data (Name, Email, Phone)
-  - [x] fetch existing user list return list of saved users
-  - [x] update existing user send JSON payload with updated user data (Name, Email, Phone)
-  - [x] delete existing user
+  - create a new user send JSON payload with user data (Name, Email, Phone)
+  - fetch existing user list return list of saved users
+  - update existing user send JSON payload with updated user data (Name, Email, Phone)
+  - delete existing user
 - [x] BONUS 1: Create a custom response body where you will send to client status code, data and user friendly message.
 
 - [x] BONUS 2: Create a 404 Not found endpoint witch will return an error when user try to request not existing route.
 
 ### Built With
 
-- [React JS](https://es.reactjs.org/)
-- [Material UI](https://material-ui.com/)
-- [CSS BEM](http://getbem.com/introduction/)
-- [Axios](https://github.com/axios/axios)
 - [Node JS](https://nodejs.org/)
+- [Axios](https://github.com/axios/axios)
 - [Express JS](https://expressjs.com/)
-- [React Notifications](https://www.npmjs.com/package/react-notifications)
 
 <!-- GETTING STARTED -->
 
@@ -79,7 +64,23 @@ npm install npm@latest -g
 
 ### Installation
 
-There are README instructions in each folder.
+1. Clone the repo
+
+```sh
+git clone https://github.com/tote93/jlgr-koch-media-task.git
+```
+
+3. Install NPM packages
+
+```sh
+cd back && npm install
+```
+
+4. Execute
+
+```JS
+npm run start
+```
 
 <!-- LICENSE -->
 

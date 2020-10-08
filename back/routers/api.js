@@ -16,8 +16,9 @@ api.post("/createUser", createUser);
 
 api.put("/updateUser", updateUser);
 
-api.post("/deleteUser", deleteUser);
+api.put("/deleteUser", deleteUser);
 
+// 404 route for get and post status
 api.get("*", (req, res) => {
   res
     .status(404)

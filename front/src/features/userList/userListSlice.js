@@ -15,7 +15,7 @@ export const userListSlice = createSlice({
       });
     },
     addToList: (state, action) => {
-      return { ...state, list: [...state.list, action.payload] };
+      state.list = [...state.list, action.payload];
     },
     editUserOnList: (state, action) => {
       state.list = state.list.map((user) => {

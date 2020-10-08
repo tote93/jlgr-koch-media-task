@@ -1,4 +1,3 @@
-import React from "react";
 import NotificationManager from "react-notifications/lib/NotificationManager";
 import { checkStatusCode } from "../functions";
 
